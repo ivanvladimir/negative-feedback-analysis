@@ -1,0 +1,28 @@
+=================================== Analysing table V (Pos effect)
+
+Total interventions (neutral feedback) : 15
+Total interventions (negative feedback): 15
+
+=== Calculating Fisher exact table
+                   POS     NEG
+neutral  feedback    8     7
+negative feedback   15     0
+
+=== Calculating independence (Fisher exact test)
+p value = 0.00632183908044 (independent)
+=== Calcularing probability (assuming Hypergeometric distribution)
+Probability: 0.00316091954023
+
+=== Calculating power
+library(statmod)
+power.fisher.test(0.533333333333,1.0,15,15,alpha=0.01)
+Defaults (0.01) = 0.6
+Defaults (0.05) = 0.9
+=================================== Analysing time (Pos effect)
+
+Total times (neutral feedback) : 15
+Total times(negative feedback) : 15
+
+=== Calculating independence (Unpaired t-test)
+p value = 1.70859343527 (not independent)
+If we assume unequal variances than the t-statistic is 0.0985906877656 and the p-value is 0.0985906877656. (not independent)
