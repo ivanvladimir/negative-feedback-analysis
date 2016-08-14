@@ -11,6 +11,7 @@ codes = {
     "null" : 3
 }
 
+
 neutral =np.array([0,1,2,1,2,1,3,2,3,1,2,1,1,1,3])
 sad=np.array([1,1,1,1,1,1,1,1,1,1,1,1,1,1,0])
 angry=np.array([1,1,1,1,1,1,1,1,1,1,1,1,1,1,0])
@@ -93,7 +94,7 @@ print "Total times(sad feedback)      :", sad_times.shape[0]
 print "Total times(angry feedback)    :", angry_times.shape[0]
 print
 print "=== Calculating independence (Unpaired t-test)" 
-pvalue,ts = stats.ttest_ind(neutral_times, sad_times)
+ts, pvalue = stats.ttest_ind(neutral_times, sad_times)
 print "Neutral vs sad"
 print "p value =", pvalue,
 if pvalue < 0.01:
@@ -104,7 +105,7 @@ else:
 
 
 print "=== Calculating independence (Unpaired t-test)" 
-pvalue,ts = stats.ttest_ind(neutral_times, sad_times)
+ts, pvalue = stats.ttest_ind(neutral_times, sad_times)
 print "Neutral vs sad"
 print "p value =", pvalue,
 if pvalue < 0.01:
@@ -119,7 +120,7 @@ else:
     print "(not independent)"
 
 print "Neutral vs angry"
-pvalue,ts = stats.ttest_ind(neutral_times, angry_times)
+ts, pvalue = stats.ttest_ind(neutral_times, angry_times)
 print "p value =", pvalue,
 if pvalue < 0.01:
     print "(independent)"
@@ -133,7 +134,7 @@ else:
     print "(not independent)"
 
 print "sad vs angry"
-pvalue,ts = stats.ttest_ind(sad_times, angry_times)
+ts, pvalue = stats.ttest_ind(sad_times, angry_times)
 print "p value =", pvalue,
 if pvalue < 0.01:
     print "(independent)"
